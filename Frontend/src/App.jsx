@@ -1,20 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { ping } from "./apis/ping";
-import { usePing } from "./hooks/apis/queries/usePing";
+import { createBrowserRouter, RouterProvider } from "react-router";
+import Home from "./pages/Home";
 
 const App = () => {
-  const { isLoading, data } = usePing();
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+  ]);
 
-  const [isVisible, setisVisible] = useState(false);
-
-  if (isLoading) return <h1>Loading...</h1>;
-
-  return (
-    <div>
-      <button onClick={() => setisVisible(!isVisible)}>Toggle</button>
-      {isVisible && <h1>Hello,{data.message}</h1>}
-    </div>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;
