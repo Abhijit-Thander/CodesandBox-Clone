@@ -1,14 +1,18 @@
 import express from "express";
-import dotenv from "dotenv";
-dotenv.config();
+import { SERVER_CONFIG } from "./config/ServerConfig.js";
+import cors from "cors";
+import apiRouter from "./routes/index.js";
 
 let app = express();
-const PORT = process.env.PORT || 8000;
 
-app.get("/", (req, res) => {
-  res.send("<h1>Hello From Server <h1/>");
-});
+//middlewares
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
-app.listen(PORT, () => {
-  console.log(`Server is listening on Port${PORT}`);
+//Routes
+app.use("/api", apiRouter);
+
+app.listen(SERVER_CONFIG.PORT, () => {
+  console.log(`Server is listening on Port ${SERVER_CONFIG.PORT}`);
 });
