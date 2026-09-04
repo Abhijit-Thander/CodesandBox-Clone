@@ -17,7 +17,7 @@ const Hero = () => {
 
             <div className="flex flex-wrap items-center gap-4 mt-4">
               <Link
-                to="/"
+                to="/create-project"
                 className="bg-[#DCFF50] text-[#161616] font-semibold text-sm px-6 py-3 rounded-md shadow-sm hover:brightness-95 transition-all"
               >
                 Start Coding

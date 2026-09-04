@@ -11,7 +11,7 @@ export const createProjectController = async (req, res) => {
 
   await fs.mkdir(`./Projects/${projectId}`);
   const response = await execPromisified(
-    "npm create vite@latest firstApp -- --template react",
+    "npm create vite@latest sandbox -- --template react",
     { cwd: `./Projects/${projectId}` },
   );
 
