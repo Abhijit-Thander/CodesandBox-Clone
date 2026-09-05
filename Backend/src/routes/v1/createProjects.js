@@ -1,8 +1,13 @@
 import express from "express";
-import { createProjectController } from "../../controllers/createProjectControllers.js";
+import {
+  createProjectController,
+  getProjectTree,
+} from "../../controllers/createProjectControllers.js";
 
 const router = express.Router();
 
+// router.get("/", createProjectController);
 router.post("/", createProjectController);
+router.get("/:projectId", getProjectTree);
 
 export default router;
