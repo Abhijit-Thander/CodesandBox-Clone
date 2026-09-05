@@ -1,14 +1,12 @@
-import React from "react";
 import { useParams } from "react-router";
-import EditorComponent from "../components/ui/EditorComponents/MonacoEditor";
+import EditorLayout from "../components/ui/EditorComponents/EditorLayout";
 
 const ProjectPlayground = () => {
   const { projectId } = useParams();
 
   return (
     <div>
-      <EditorComponent />
-      {/* <EditorLayout/> */}
+      <EditorLayout />
     </div>
   );
 };

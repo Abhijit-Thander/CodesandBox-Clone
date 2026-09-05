@@ -3,9 +3,8 @@ import Editor from "@monaco-editor/react";
 const MonacoEditor = () => {
   return (
     <Editor
-      height="100vh"
+      height="90vh"
       theme="vs-dark"
-      defaultValue="// Start coding..."
       options={{
         fontSize: 14,
         minimap: {
